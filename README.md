@@ -1,5 +1,5 @@
 ## ➕ Creating User Profiles
-Chrome Profiles and Microsoft SSO extension paths are required in or for this app to work. This will work with your default work profile but if you want to create a new profile the instructions can be found here: https://support.google.com/chrome/answer/2364824?hl=en&co=GENIE.Platform%3DDesktop
+Chrome Profiles and Microsoft SSO extension paths are required in or for this app to work. This will work with your default work profile but if you want to create a new profile/don't have a profile the instructions can be found here: https://support.google.com/chrome/answer/2364824?hl=en&co=GENIE.Platform%3DDesktop
 
 Once you have a profile you would like to use, you will need to know the path to both the profile and the Microsoft SSO extension in order to add a User.
 
