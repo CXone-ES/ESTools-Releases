@@ -1,5 +1,5 @@
 ## 🛠️ Setup & Installation
-https://raw.githubusercontent.com/CXone-ES/ESTools-Releases/main/ESTool_Setup_Vid.mp4
+https://github.com/user-attachments/assets/29cdc811-a24b-461e-8696-3282c85e37a7
 - Download the latest version of the Setup.exe from Releases.
 - Open a terminal and run this command:
 ```bash
