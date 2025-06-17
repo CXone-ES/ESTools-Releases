@@ -28,5 +28,3 @@ Profile data is stored locally on your machine at:
 ## 🛣️ Roadmap
 
 - Support FedRamp and non-TMA Accounts
-
-- Web Studio Access
