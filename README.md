@@ -1,5 +1,5 @@
 ## 🛠️ Setup & Installation
-- Download the latest version of the Setup.exe [here](https://github.com/CXone-ES/ESTools-Releases/releases).
+- Download the latest version of the Setup.exe from Releases.
 - Open a terminal and run this command:
 ```bash
 npx playwright install
