@@ -1,5 +1,6 @@
 ## 🛠️ Setup & Installation
 Quick Setup Guide
+
 https://github.com/user-attachments/assets/29cdc811-a24b-461e-8696-3282c85e37a7
 - Download the latest version of the Setup.exe from Releases.
 - Open a terminal and run this command:
