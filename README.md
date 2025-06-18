@@ -39,6 +39,7 @@ Profile data is stored locally on your machine at:
 - After the search bar appear on the right, enter in either a full BU # or a full or partial account name
 - Press enter or hit search
 - Press the Studio button to copy the token
+- If you need to refresh or switch tenants, press on your User and the process will restart and provide you the list of tenants to select from
 
 ## 🛣️ Roadmap
 
