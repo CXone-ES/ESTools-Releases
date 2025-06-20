@@ -2,6 +2,8 @@
 
 - Download and install the latest version of the Setup.exe from Releases.
 
+https://github.com/user-attachments/assets/ef47be36-fc9a-4424-a3e3-c695e523b2cd
+
 ## ➕ Creating User Profiles
 
 ![create_user](https://github.com/user-attachments/assets/2702ca46-a1ad-4e8d-a23f-24e8941edff4)
