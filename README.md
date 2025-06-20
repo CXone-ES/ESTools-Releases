@@ -1,6 +1,6 @@
 ## 🛠️ Setup & Installation
 
-- Download the latest version of the Setup.exe from Releases.
+- Download and install the latest version of the Setup.exe from Releases.
 
 ## ➕ Creating User Profiles
 
