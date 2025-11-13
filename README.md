@@ -36,6 +36,20 @@ Profile data is stored locally on your machine at:
 - Press the Studio button to copy the token
 - If you need to refresh or switch tenants, press on your User and the process will restart and provide you the list of tenants to select from
 
+## 🛠️ Script Management
+In your selected BU, click "Scripts" to open the script pane.
+Your BU selection will show at the top of the page. You can filter scripts using the search bar under the BU selection. The back button will take you back to the BU/BU search screen (depending on if it's in TMA)
+Existing scripts are listed in the left pane. Click the checkbox by each script you would like to update.
+
+  TO PROMOTE
+Enter the previous environment in the "replace what" box. Enter your new environment in the "replace with" box.
+NOTE: The way the APIs work, the folder path is directly appended to the script name. So you can replace either folders or script names here. You can include extra characters like the _ or \ if you're worried about the replace function matching where it shouldn't.
+Click the "Submit" button. A loading bar appears at the bottom to show progress, and the results of each update will appear in logs.
+
+  FOR VARIABLE REDACTION
+In the redaction text box, enter the full list of variables as comma separated list, no spaces are necessary. Include "global:" as needed.
+NOTE: This will fully replace any existing redaction, so ensure your list includes all needed values including existing.
+
 ## 🛣️ Roadmap
 
 - File Promotion
