@@ -110,11 +110,3 @@ A loading bar appears at the bottom to show progress, and the results of each up
 2. Include "global:" as needed
 
 **Note:** This will fully replace any existing redaction, so ensure your list includes all needed values including existing ones.
-
-## Tech Stack
-
-- **Electron** (with Electron Forge)
-- **React** (UI)
-- **Playwright** (SSO automation)
-- **Node.js** backend with secure IPC
-- **CXone API** integration (using access tokens)
