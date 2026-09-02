@@ -22,8 +22,8 @@ Once you have a profile you would like to use, you will need to know the path to
 
 **Microsoft SSO Extension Path:**
 
-- `C:\Users\{Your UserName}\AppData\Local\Google\Chrome\User Data\{Profile #}\Extensions\ppnbnpeolgkicgegkbkbjmhlideopiji\1.0.##_#`
-- To ensure it's the correct extension, look inside the `1.0.##_#` folder - you should see multiple windows PNGs and a `manifest.json` (required)
+- `C:\Users\{Your UserName}\AppData\Local\Google\Chrome\User Data\{Profile #}\Extensions\ppnbnpeolgkicgegkbkbjmhlideopiji`
+- You no longer need to select the version number, this will iterate as updates are made.
 
 **Creating a User:**
 
@@ -46,11 +46,22 @@ With a profile and the locations of the two folders, you will be ready to create
    - A full BU #, or
    - A full or partial account name
 5. Press Enter or click the Search button
-6. Click the Studio button to copy the token
+
+**Shortcuts:**
+From the account search, you have several options.
+- Copy: copies data to the clipboard
+   - Desktop Studio - provides the session ID for logging into desktop studio
+   - URL - provides the API base URL
+   - Token - provides an API token
+- Launch: opens a new browser window session
+   - Userhub: opens to "Impersonate and Support"
+   - Web Studio: automatically navigates to web studio
+   - Settings: selects the business unit after search but does not impersonate
+   - Configure: opens to "Impersonate and Configure"
 
 **Refreshing or Switching Tenants:**
 
-- To refresh or switch tenants, click on your User and the process will restart, providing you with the list of tenants to select from
+- To refresh or switch tenants, click the back button or your User profile. You will be presented again with the tenant list to select from.
 
 ## ⭐ Favorites
 
@@ -96,13 +107,11 @@ Existing scripts are listed in the left pane. Click the checkbox by each script 
 
 **TO PROMOTE:**
 
-1. Enter the previous environment in the "Replace What" box
-2. Enter your new environment in the "Replace With" box
+1. Enter the previous environment in the "Replace What" box. This can include folders such as "DEV\" or file suffixes like "_DEV"
+2. Enter your new environment in the "Replace With" box. This can include folders such as "PROD\" or file suffixes like "_PROD"
 3. Click the "Submit" button
 
-**Note:** The way the APIs work, the folder path is directly appended to the script name. So you can replace either folders or script names here. You can include extra characters like the `_` or `\` if you're worried about the replace function matching where it shouldn't.
-
-A loading bar appears at the bottom to show progress, and the results of each update will appear in logs.
+A loading bar appears at the bottom of the page to show progress, and the results of each update will appear in logs.
 
 **FOR VARIABLE REDACTION:**
 
