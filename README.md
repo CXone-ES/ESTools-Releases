@@ -58,6 +58,7 @@ From the account search, you have several options.
    - Web Studio: automatically navigates to web studio
    - Settings: selects the business unit after search but does not impersonate
    - Configure: opens to "Impersonate and Configure"
+- Management (Admin and above): opens the BU's Studio scripts or files - see [Script & File Management](#-script--file-management)
 
 **Refreshing or Switching Tenants:**
 
@@ -89,33 +90,106 @@ From the account search, you have several options.
 
 **Note:** Favorites are stored in the same config file as profile data (`C:\Users\{Your UserName}\AppData\Roaming\estools\config.json`).
 
-## 📜 Script Management
+## 📜 Script & File Management
 
-**Accessing Script Management:**
+A file manager for a single BU. It handles two file types:
 
-In your selected BU, click "Scripts" to open the script pane.
+- **Scripts**: Studio scripts
+- **Files**: the BU's file server (prompts, audio, calling lists, and other uploaded files)
 
-**Navigating the Script Pane:**
+**Note:** The Management column is available to Admin roles and above.
 
-- Your BU selection will show at the top of the page
-- You can filter scripts using the search bar under the BU selection
-- The back button will take you back to the BU/BU search screen (depending on if it's in TMA)
+**Opening Script & File Management:**
 
-**Selecting Scripts:**
+1. Search for the BU
+2. In the Management column of the results:
+   - Click **Scripts** to open Studio scripts, or
+   - Click the **▾** arrow beside it and choose **Files**
+3. To switch between Scripts and Files without leaving, use the file-type picker at the top of the page. Switching clears your current selection.
+4. Click **Back** to return to the BU search
 
-Existing scripts are listed in the left pane. Click the checkbox by each script you would like to update.
+**The File Browser:**
+
+- Click a folder to expand it, or use **Expand all** to load every folder
+- Type in the filter box at the top to narrow the list by file or folder name
+- Tick the checkbox next to a file to select it. Ticking a folder selects everything inside it.
+- **Select all**, **Clear selection** and **↻ Refresh** are in the browser header
+- Keyboard: **↑ / ↓** to move, **Space** to tick or untick, **Enter** to expand or collapse a folder, **Esc** to close an open panel
+
+Once something is selected, an action bar appears at the bottom of the page:
+
+| Action           | Scripts | Files | What it does                                                    |
+| ---------------- | :-----: | :---: | --------------------------------------------------------------- |
+| Promote…         |    ✅    |   ✅   | Copies the selection to a new path in the same BU (e.g. DEV → PROD) |
+| Rename…          |         |   ✅   | Moves or renames the selection in place                         |
+| Export           |    ✅    |   ✅   | Saves the selection to a folder on your computer                |
+| Duplicate        |    ✅    |   ✅   | Makes a copy alongside the original                             |
+| Delete           |    ✅    |   ✅   | Permanently deletes the selection                               |
+| Variable redaction |  ✅    |       | Sets the redacted variables on the selected scripts             |
+
+Progress for each action shows at the bottom of the page, and the result of each file is written to the log.
 
 **TO PROMOTE:**
 
-1. Enter the previous environment in the "Replace What" box. This can include folders such as "DEV\" or file suffixes like "_DEV"
-2. Enter your new environment in the "Replace With" box. This can include folders such as "PROD\" or file suffixes like "_PROD"
-3. Click the "Submit" button
+1. Select the scripts/files or folders you want to promote and click **Promote…**
+2. Choose a scope:
+   - **Whole folder**: copies the folder and keeps its structure at the target. In the Folder Path Mapping panel, edit the target folder name (e.g. change `DEV` to `PROD`). Subfolders follow the change automatically.
+   - **Selected scripts/files only**: each selected item gets its own row in the mapping panel to edit. To change every name at once, use the two boxes below the mapping panel (e.g. `_DEV` → `_PROD`).
+3. If any target already exists, pick a conflict option:
+   - **Overwrite**: replaces the existing item
+   - **Keep both (version)**: saves the new copy with a number on the end, e.g. `Main (2)`
+4. Click **Promote**
 
-A loading bar appears at the bottom of the page to show progress, and the results of each update will appear in logs.
+**Note:** Promote copies within the BU you have open. To move scripts or files to a *different* BU, Export them here and Import them into the other BU.
 
-**FOR VARIABLE REDACTION:**
+**TO RENAME (Files only):**
 
-1. In the redaction text box, enter the full list of variables as a comma-separated list (no spaces are necessary)
-2. Include "global:" as needed
+Works like Promote, but moves the files instead of copying them.
 
-**Note:** This will fully replace any existing redaction, so ensure your list includes all needed values including existing ones.
+1. Select the files or folders and click **Rename…**
+2. Choose **Whole folder** (renames the folder in place, and removes the old folder once it is empty) or **Selected files only**
+3. Edit the target paths, choose a conflict option if one appears, and click **Rename**
+
+Items whose path did not change are skipped.
+
+**TO EXPORT:**
+
+1. Select the scripts/files and click **Export**
+2. Choose a folder on your computer
+
+A new subfolder named after the BU and the current date and time is created inside the chosen folder, so earlier exports are never overwritten. Scripts are saved as `.json` files; Files are saved as the original files. Folder structure is kept. Click **Cancel export** to stop an export in progress.
+
+**TO IMPORT:**
+
+1. Either:
+   - Drag files or folders from File Explorer onto a folder in the browser (or onto the drop area below it to import into the selected folder), or
+   - Click **browse…** in the drop area and choose **Files…** or **A folder…**
+2. The **Review Import** panel opens. For each file you can:
+   - Edit the **Save as** name
+   - Use **Strip leading folders** to drop wrapper folders from the path (e.g. import the contents of `Export_2026\Scripts\` without those two folders)
+   - Remove a whole drop with **×**
+3. If any names already exist at the target, choose **Overwrite** or **Keep both (version)**
+4. Click **Import**
+
+You can drop several batches before importing; each one is listed separately. For Scripts, import the `.json` files produced by Export. For Files, any file type is uploaded as is.
+
+**TO DUPLICATE:**
+
+Select the scripts/files and click **Duplicate**. Each copy is saved in the same folder with ` (Copy)` added to its name (` (Copy 2)` and so on if a copy already exists).
+
+**TO DELETE:**
+
+Select the items and click **Delete**, then confirm. **This cannot be undone.**
+
+- **Scripts**: selecting a folder deletes every script inside it
+- **Files**: selected folders are deleted along with everything inside them. Empty folders can be selected and deleted on their own.
+
+**FOR VARIABLE REDACTION (Scripts only):**
+
+1. Select the scripts and click **Promote…**
+2. In the **Variable Redaction** column, type a variable name and press **Enter** to add it. Repeat for each variable. Include `global:` as needed. Remove a variable with its **×**.
+3. Click **Add redaction**
+
+The redaction is applied to the selected scripts where they are. Nothing is promoted.
+
+**Note:** This fully replaces any existing redaction on those scripts, so make sure your list includes every needed value, including existing ones. Allowed special characters are `, : - _`.
